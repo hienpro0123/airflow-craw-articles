@@ -13,24 +13,34 @@ Start all required services using docker-compose.yml.
 
 ### Step 3: Prepare Airflow DAGs and Application Functions
 In the dags/ folder, make sure there is a new_dags.py file.
+
 In the app/ folder, implement all three required functions for crawling and saving data.
 
 ### Step 4: Access Airflow Web Interface
 Open http://localhost:8080.
+
 Login with:
+
 Username: airflow
+
 Password: airflow
+
 Find the DAG named crawl_data.
+
 Click to manually trigger it and enable auto-scheduling.
 
 ### Step 5: Access Database Management Tool
 Open http://localhost:5050.
+
 Login with:
+
 Username: admin@admin.com
+
 Password: admin
 
 ### Step 6: Connect to the PostgreSQL Server
 Add a new server connection (name it as you like).
+
 Enter the connection details according to the reference image.
 
 ![PostgreSQL Connection Settings](https://i.imgur.com/kmhYCWC.png)
