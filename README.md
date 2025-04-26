@@ -32,5 +32,8 @@ Password: admin
 ### Step 6: Connect to the PostgreSQL Server
 Add a new server connection (name it as you like).
 Enter the connection details according to the reference image.
+
+![PostgreSQL Connection Settings](https://i.imgur.com/kmhYCWC.png)
+
 Save and query the articles table to verify the crawled data.
 
