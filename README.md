@@ -1,7 +1,7 @@
 # Crawl Data Project - Airflow & Docker Setup
 
 ## Overview
-This project uses Apache Airflow to automate crawling the latest articles and saving them into a PostgreSQL database.
+This project uses Apache Airflow to automate crawling the latest 10 articles and saving them into a PostgreSQL database.
 
 ## Setup Instructions
 
