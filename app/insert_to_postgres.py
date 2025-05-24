@@ -16,16 +16,6 @@ def insert_data_to_database(dataList):
         )
         cursor = connection.cursor()
 
-        # Kiểm tra xem bảng có dữ liệu không
-        cursor.execute("SELECT COUNT(*) FROM articles")
-        count = cursor.fetchone()[0]
-
-        # Nếu bảng có dữ liệu, xóa toàn bộ và reset ID
-        if count > 0:
-            cursor.execute("TRUNCATE TABLE articles RESTART IDENTITY CASCADE")
-            connection.commit()
-            print("Đã xóa toàn bộ dữ liệu cũ và reset ID")
-
         # Tạo bảng nếu chưa tồn tại
         create_table_query = """
         CREATE TABLE IF NOT EXISTS articles (
@@ -37,8 +27,19 @@ def insert_data_to_database(dataList):
             summary TEXT
         );
         """
-        
         cursor.execute(create_table_query)
+
+        # Kiểm tra xem bảng có dữ liệu không
+        cursor.execute("SELECT COUNT(*) FROM articles")
+        count = cursor.fetchone()[0]
+
+        # Nếu bảng có dữ liệu, xóa toàn bộ và reset ID
+        if count > 0:
+            cursor.execute("TRUNCATE TABLE articles RESTART IDENTITY CASCADE")
+            connection.commit()
+            print("Đã xóa toàn bộ dữ liệu cũ và reset ID")
+
+        
         for data in dataList:
             # Câu lệnh SQL để chèn dữ liệu
             sql_insert_query = """ 
